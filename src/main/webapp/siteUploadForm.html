@@ -18,51 +18,17 @@
 
             <div id="CCDAReference">
 
-              <div id="CCDAReferenceWrapper">
+              <div id="CCDAReferenceWrapper">			  			
               <p>There are three ways of running the Scorecard. You
                 can either try out the Scorecard with our test document,
                 upload your document using the interface below and then
                 press "Score", or, directly call the API to invoke the
                 Scorecard programmatically.</p>
+				
+			  <div class="row">
+			  
+			  <div class="col-md-6">
 
-              <span class="directions">Try:</span>
-              <form name="scTestForm">
-
-                  <ul>
-
-                    <li>Try out the Scorecard with our C-CDA document
-                      <div style="position: relative;">
-                        <div class="row">
-                          <div class="col-md-12 form-group">
-                            <!--try me button-->
-                            <button ng-click="tryScorecard()"  
-                              id="scTryMe"
-                              class="btn btn-primary start"
-                              data-toggle="modal" data-target="#resultModal"
-                              tabindex="1" type="button">
-                              <i class="glyphicon glyphicon-user"></i> <span>Try Me</span>
-                            </button>
-                          </div>
-                        </div>                         
-                      </div>
-                    </li>                                      
-                    
-                    <li>Download the C-CDA file used for the test
-                      <div>
-                        <!--download button-->
-                        <button ng-click="triggerTryScorecardFileDownload()"  
-                          id="scTryMeDownload"
-                          class="btn btn-primary start"                          
-                          tabindex="1" type="button">
-                          <i class="glyphicon glyphicon-download-alt"></i> <span>Download</span>
-                        </button>                         
-                      </div>
-                    </li>                                                  
-
-                  </ul>
-
-                </form>
-                          
               <span class="directions">Manual:</span>
               <form name="scUploadForm">
 
@@ -134,8 +100,57 @@
 
                   </ol>
 
+                </form>			  
+              
+			  </div> <!-- end Manual column -->
+			  
+			  <div class="col-md-6">
+              <span class="directions">Try:</span>
+              <form name="scTestForm">
+
+                  <ul>
+
+                    <li>Try out the Scorecard with our C-CDA document
+                      <div style="position: relative;">
+                        <div class="row">
+                          <div class="col-md-12 form-group">
+                            <!--try me button-->
+                            <button ng-click="tryScorecard()"  
+                              id="scTryMe"
+                              class="btn btn-primary start"
+                              data-toggle="modal" data-target="#resultModal"
+                              tabindex="1" type="button">
+                              <i class="glyphicon glyphicon-user"></i> <span>Try Me</span>
+                            </button>
+                          </div>
+                        </div>                         
+                      </div>
+                    </li>                                      
+                    
+                    <li>Download the C-CDA file used for the test
+                      <div>
+                        <!--download button-->
+                        <button ng-click="triggerTryScorecardFileDownload()"  
+                          id="scTryMeDownload"
+                          class="btn btn-primary start"                          
+                          tabindex="1" type="button">
+                          <i class="glyphicon glyphicon-download-alt"></i> <span>Download</span>
+                        </button>                         
+                      </div>
+                    </li>                                                  
+
+                  </ul>
+
                 </form>
-                
+              
+			  </div> <!-- end Try me column -->
+			
+			  </div> <!-- end Manual and Try Me row --> 
+			
+			  <div class="row"> <!-- start API and Local row -->
+			  
+			  <div class="col-md-6"> <!-- start API column -->
+			  
               <span class="directions">API:</span>
               <p>Invoke the following API:</p>
               <ul>
@@ -154,6 +169,20 @@
                 <li>Use the multipart/form-data to encode the file as part of the body parameters for the POST request
                 </li>
               </ul>
+			  
+			  </div> <!-- end API column -->
+			  
+			  <div class="col-md-6"> <!-- start Local column -->
+			 
+              <span class="directions">Local Installation:</span>
+			  <p>Some text about the local installation lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <ul>
+              <li>Access instructions for installing the Scorecard locally<a href="/deadLinkForLocalInstallationInstructionsNotYetImplemented"> here</a></li>
+              </ul>
+			 
+			  </div> <!-- end Local column -->
+			  
+			  </div> <!-- end API and Local row -->
               
               </div>
             </div>
