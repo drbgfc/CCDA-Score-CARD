@@ -30,6 +30,8 @@
   
   <div class="col-lg-4 btn-group-vertical">
 	<!--<h2 style="font-size: 18px">Scorecard Resources</h2>-->
+    <a ng-click="tryScorecard()" onclick="this.blur();" id="scTryMe" class="btn btn-success" data-toggle="modal" data-target="#resultModal"
+      tabindex="1" type="button"><i class="glyphicon glyphicon-user"></i> <span>Try Me!</i></a>        
 	<a class="btn btn-default" type="button" tabindex="1" data-toggle="modal" data-target="#scoringCriteriaModal" id="scoringCriteriaButton"
       href="javascript:void(0)" onclick="this.blur();">How to Interpret the Scorecard Results</a>
 	<a class="btn btn-default" type="button" tabindex="1" data-toggle="modal" data-target="#siteApiInstructionsModal" id="siteApiInstructionsButton"
