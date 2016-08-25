@@ -114,3 +114,10 @@ scApp.directive('siteApiInstructionsModal', function() {
 		templateUrl : 'siteApiInstructionsModal.html'
 	};
 });
+
+scApp.directive('siteIntroductionModal', function() {
+	return {
+		restrict: 'E',
+		templateUrl: 'siteIntroductionModal.html'
+	};
+});
