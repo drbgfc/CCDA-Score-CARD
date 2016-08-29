@@ -1,151 +1,137 @@
-<div id="CCDAvalidator" class="panel panel-default removeBorder">  
+<div class="row">
 
-    <div id="CCDAAccordion">
+	<div class="col-md-6">
+	 <div id="CCDAvalidator" class="panel panel-default removeBorder">  
 
-      <div class="panel panel-default">
-	  
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" data-parent="#CCDAAccordion"
-              href="#collapseCCDA2_0Validator" tabindex="1">Run the Scorecard</a>
-              <!--<a href data-toggle="modal" data-target="#scoringCriteriaModal" class="pull-right" tabindex="1">
-                View Scoring Criteria&nbsp;<span class="glyphicon glyphicon-sunglasses"></span>
-              </a>-->
-          </h3>
-        </div>
-		
-        <div id="collapseCCDA2_0Validator"
-          class="panel-collapse collapse in">
-          <div class="panel-body">
+		<div id="CCDAAccordion">
 
-            <div id="CCDAReference">
-              <div id="CCDAReferenceWrapper">
-              
-                <div class="row">
-                  <div class="col-lg-12">
-                    <p>
-                      <b>PHI Note:</b> The C-CDA Scorecard does not retain your submitted C-CDA file as
-                      the file is deleted from the server immediately after processing.
-                      However, we strongly suggest that you do not include any Protected
-                      Health Information (PHI) or Personally Identifiable Information
-                      (PII) in your C-CDA file submissions to the Scorecard. Click <a
-                        href="http://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html" target="_blank">here</a>
-                      for more information on how to de-identify PHI.
-                    </p>
-                  </div>
-                </div>              
-			  
-			    <div class="row">
-				
-				  <div class="col-md-6">
-					  <span class="directions">Run:</span>
-					  <form name="scUploadForm">
-
-						  <ol>
-
-							<!--
-							<li>Select results desired.
-							  <div class="form-group">
-								<select
-								  ng-init="selectedValidationOption = selectedValidationOption || validationOptions[0]"
-								  ng-model="selectedValidationOption"
-								  ng-options="option as option.value for option in validationOptions"
-								  class="form-control" tabindex="1">
-								</select>
-							  </div>
-							</li>
-							-->
-
-							<li>Upload your C-CDA Document.
-							  <div style="position: relative;">
-								<div class="row">
-								  <div class="col-md-12 form-group">
-									<span
-									  class="btn btn-success fileinput-button">
-									  <i class="glyphicon glyphicon-plus"></i>&nbsp;<span>Upload</span> <input type="file"
-									  ngf-select ng-model="ccdaScFile"
-									  name="file" accept=".xml"
-									  ngf-max-size="3MB" required
-									  ngf-model-invalid="invalidCcdaScFile"
-									  tabindex="1" />
-									</span> <span class="infoColor"> <i
-									  ng-show="scUploadForm.file.$error.required">&nbsp;*Please
-										select a C-CDA file.</i> <i
-									  ng-show="scUploadForm.file.$error.maxSize">
-										*File too large {{invalidCcdaScFile.size
-										/ 1000000|number:1}}MB: max 3MB </i>
-									</span> <span ng-show="ccdaScFile.name">{{ccdaScFile.name}}</span>
-								  </div>
-								</div>
-							  </div>
-							</li>
-
-							<li>Click Score.
-							  <div>
-								<!--score button-->
-								<button ng-disabled="(!scUploadForm.$valid && !mainDebug.inDebugMode) || 
-								((mainDebug.inDebugMode && !mainDebug.useLocalTestDataForServices) && !scUploadForm.$valid)"
-								  ng-click="uploadCcdaScFileAndCallServices(ccdaScFile, mainDebug.inDebugMode && mainDebug.useLocalTestDataForServices)"
-								  id="scFormSubmit"
-								  class="btn btn-primary start"
-								  data-toggle="modal" data-target="#resultModal"
-								  tabindex="1" type="button">
-								  <i class="glyphicon glyphicon-ok"></i> <span>Score</span>
-								</button>
-								<!--progress bar-->
-								<span class="progress"
-								  ng-show="uploadDisplay.isLoading && ccdaScFile.progress < 100">
-								  <!-- <div style="width: {{ccdaScFile.progress"
-									ng-bind="'File Upload Progress: ' + ccdaScFile.progress + '%'"></div> -->
-								  <span
-								  ng-bind="'File Upload Progress: ' + ccdaScFile.progress + '%'"></span>
-								</span> <span class="successColor"
-								  ng-show="uploadDisplay.isLoading && ccdaScFile.progress >= 100 && !ngFileUploadError">
-								  File Upload Complete. </span> <span
-								  class="errorColor" ng-show="ngFileUploadError">
-								  {{uploadErrorData.uploadError}} </span>
-							  </div>
-							</li>
-
-						  </ol>
-
-				       </form>					
-				  </div> <!-- end Scorecard column -->
-				  
-				  <div class="col-md-6">
-                      <!--<span class="directions">Learn and Implement:</span>-->
-					  <div class="btn-group-vertical btn-block" style="padding-top: 15px">              
-						<!--<h2 style="font-size: 18px">Scorecard Resources</h2>-->                        
-                        <a class="btn btn-default" type="button" tabindex="1" data-toggle="modal" data-target="#siteIntroductionModal" id="introductionButton"
-                          href="javascript:void(0)" onclick="this.blur();">History and Introduction to the Scorecard</a> 
-						<a class="btn btn-default" type="button" tabindex="1" data-toggle="modal" data-target="#scoringCriteriaModal" id="scoringCriteriaButton"
-						  href="javascript:void(0)" onclick="this.blur();">How to Interpret the Scorecard Results</a>
-						<a class="btn btn-default" type="button" tabindex="1" data-toggle="modal" data-target="#siteApiInstructionsModal" id="siteApiInstructionsButton"
-						  href="javascript:void(0)" onclick="this.blur();">How to Invoke the Scorecard APIs</a>
-						<a class="btn btn-default" type="button" tabindex="1" target="_blank"
-						  href="deadLinkForNow" onclick="this.blur();">Download the Scorecard for Local Instantiation</a>
-						<!--<a class="btn btn-default" type="button" tabindex="1" target="_blank" 
-						  href="http://ccda-scorecard.smartplatforms.org/static/ccdaScorecard/#/" onclick="this.blur();">Navigate to the SMART Scorecard</a>-->          
-						<!--
-						<span class="inline-ext">
-							<a class="ext-icon" href="http://www.hhs.gov/disclaimer.html" tabindex="1" target="_blank" title="Web Site Disclaimers">
-								<span class="hiddenText">Web Site Disclaimers</span>
-							</a>
-						</span>
-						-->
-					  </div>				
-				  </div> <!-- end Button Group column -->				  
-
-			    </div> <!-- end Scorecard and Button Group row -->
-              
-              </div>
-            </div>
+		  <div class="panel panel-default">
+		  
+			<div class="panel-heading">
+			  <h3 class="panel-title">
+				<a data-toggle="collapse" data-parent="#CCDAAccordion"
+				  href="#collapseCCDA2_0Validator" tabindex="1">Run the Scorecard</a>
+				  <!--<a href data-toggle="modal" data-target="#scoringCriteriaModal" class="pull-right" tabindex="1">
+					View Scoring Criteria&nbsp;<span class="glyphicon glyphicon-sunglasses"></span>
+				  </a>-->
+			  </h3>
+			</div>
 			
-          </div>
-        </div>
-		
-      </div>
-	  
-    </div>
+			<div id="collapseCCDA2_0Validator"
+			  class="panel-collapse collapse in">
+			  <div class="panel-body">
 
-</div>
+				<div id="CCDAReference">
+				  <div id="CCDAReferenceWrapper">					
+					  
+						  <span class="directions">Run:</span>
+						  <form name="scUploadForm">
+
+							  <ol>
+
+								<!--
+								<li>Select results desired.
+								  <div class="form-group">
+									<select
+									  ng-init="selectedValidationOption = selectedValidationOption || validationOptions[0]"
+									  ng-model="selectedValidationOption"
+									  ng-options="option as option.value for option in validationOptions"
+									  class="form-control" tabindex="1">
+									</select>
+								  </div>
+								</li>
+								-->
+
+								<li>Upload your C-CDA Document.
+								  <div style="position: relative;">
+									<div class="row">
+									  <div class="col-md-12 form-group">
+										<span
+										  class="btn btn-success fileinput-button">
+										  <i class="glyphicon glyphicon-plus"></i>&nbsp;<span>Upload</span> <input type="file"
+										  ngf-select ng-model="ccdaScFile"
+										  name="file" accept=".xml"
+										  ngf-max-size="3MB" required
+										  ngf-model-invalid="invalidCcdaScFile"
+										  tabindex="1" />
+										</span> <span class="infoColor"> <i
+										  ng-show="scUploadForm.file.$error.required">&nbsp;*Please
+											select a C-CDA file.</i> <i
+										  ng-show="scUploadForm.file.$error.maxSize">
+											*File too large {{invalidCcdaScFile.size
+											/ 1000000|number:1}}MB: max 3MB </i>
+										</span> <span ng-show="ccdaScFile.name">{{ccdaScFile.name}}</span>
+									  </div>
+									</div>
+								  </div>
+								</li>
+
+								<li>Click Score.
+								  <div>
+									<!--score button-->
+									<button ng-disabled="(!scUploadForm.$valid && !mainDebug.inDebugMode) || 
+									((mainDebug.inDebugMode && !mainDebug.useLocalTestDataForServices) && !scUploadForm.$valid)"
+									  ng-click="uploadCcdaScFileAndCallServices(ccdaScFile, mainDebug.inDebugMode && mainDebug.useLocalTestDataForServices)"
+									  id="scFormSubmit"
+									  class="btn btn-primary start"
+									  data-toggle="modal" data-target="#resultModal"
+									  tabindex="1" type="button">
+									  <i class="glyphicon glyphicon-ok"></i> <span>Score</span>
+									</button>
+									<!--progress bar-->
+									<span class="progress"
+									  ng-show="uploadDisplay.isLoading && ccdaScFile.progress < 100">
+									  <!-- <div style="width: {{ccdaScFile.progress"
+										ng-bind="'File Upload Progress: ' + ccdaScFile.progress + '%'"></div> -->
+									  <span
+									  ng-bind="'File Upload Progress: ' + ccdaScFile.progress + '%'"></span>
+									</span> <span class="successColor"
+									  ng-show="uploadDisplay.isLoading && ccdaScFile.progress >= 100 && !ngFileUploadError">
+									  File Upload Complete. </span> <span
+									  class="errorColor" ng-show="ngFileUploadError">
+									  {{uploadErrorData.uploadError}} </span>
+								  </div>
+								</li>
+
+							  </ol>
+
+						   </form>				  		 			 
+				  
+				  </div>
+				</div>
+				
+			  </div>
+			</div>
+			
+		  </div>
+		  
+		</div>
+
+	 </div> <!-- end 'Run the Scorecard' panel -->
+	</div> <!-- end Scorecard column -->
+	 
+    <div class="col-md-6">
+    <!--<span class="directions">Learn and Implement:</span>-->
+     <div class="btn-group-vertical btn-block">              
+	  <!--<h2 style="font-size: 18px">Scorecard Resources</h2>-->                        
+	  <a class="btn btn-default" type="button" tabindex="1" data-toggle="modal" data-target="#siteIntroductionModal" id="introductionButton"
+	    href="javascript:void(0)" onclick="this.blur();">History and Introduction to the Scorecard</a> 
+	  <a class="btn btn-default" type="button" tabindex="1" data-toggle="modal" data-target="#scoringCriteriaModal" id="scoringCriteriaButton"
+	    href="javascript:void(0)" onclick="this.blur();">How to Interpret the Scorecard Results</a>
+	  <a class="btn btn-default" type="button" tabindex="1" data-toggle="modal" data-target="#siteApiInstructionsModal" id="siteApiInstructionsButton"
+	    href="javascript:void(0)" onclick="this.blur();">How to Invoke the Scorecard APIs</a>
+	  <a class="btn btn-default" type="button" tabindex="1" target="_blank"
+	    href="deadLinkForNow" onclick="this.blur();">Download the Scorecard for Local Instantiation</a>
+	  <!--<a class="btn btn-default" type="button" tabindex="1" target="_blank" 
+	    href="http://ccda-scorecard.smartplatforms.org/static/ccdaScorecard/#/" onclick="this.blur();">Navigate to the SMART Scorecard</a>-->          
+	  <!--
+	  <span class="inline-ext">
+		  <a class="ext-icon" href="http://www.hhs.gov/disclaimer.html" tabindex="1" target="_blank" title="Web Site Disclaimers">
+			  <span class="hiddenText">Web Site Disclaimers</span>
+		  </a>
+	  </span>
+	  -->
+     </div>				
+    </div> <!-- end Button Group column -->	
+
+</div> <!-- end Scorecard and Button Group row -->
