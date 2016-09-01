@@ -119,8 +119,18 @@
 
 	 </div> <!-- end 'Run the Scorecard' panel -->
 	</div> <!-- end Scorecard column -->
-	 
-    <div class="col-md-6" style="padding-top: 37px">
+	
+    <div class="col-md-6 text-center jumbotron">
+      <!--try me button-->
+      <button ng-click="tryScorecard()" id="scTryMe"
+        class="btn btn-success btn-lg start" data-toggle="modal"
+        data-target="#resultModal" tabindex="1" type="button">
+        <!--<i class="glyphicon glyphicon-user"></i>-->
+        <span>Try Me!</span>
+      </button>
+    </div>
+   
+    <div class="col-md-6">
     <h2 style="font-size: 18px">Learn</h2>
      <div class="btn-group-vertical btn-block">                     
 	  <a class="btn btn-default" type="button" tabindex="1" data-toggle="modal" data-target="#siteIntroductionModal" id="introductionButton"
@@ -139,7 +149,7 @@
      </div>				
     </div> <!-- end 'Learn' Button Group column -->	
     
-    <div class="col-md-6" style="padding-top: 37px">
+    <div class="col-md-6">
     <h2 style="font-size: 18px">Implement</h2>
      <div class="btn-group-vertical btn-block">                         
       <a class="btn btn-default" type="button" tabindex="1" data-toggle="modal" data-target="#siteApiInstructionsModal" id="siteApiInstructionsButton"
